@@ -1,6 +1,6 @@
 terragrunt = {
   terraform {
-    source = "git::git@github.com:ord-devops/terraform-modules.git//vpc?ref=1.1"
+    source = "git::git@github.com:ord-devops/terraform-modules.git//vpc?ref=1.2"
   }
   include {
     path = "${find_in_parent_folders()}"
