@@ -1,0 +1,3 @@
+[submodule "packer/ansible/roles"]
+	path = packer/ansible/roles
+	url = git@github.com:ord-devops/ansible-roles.git
