@@ -1,0 +1,23 @@
+{
+  "variables": {
+    "consul_encryption_key": null
+  },
+  "provisioners": [
+    {
+      "type": "ansible",
+      "playbook_file": "./ansible/provision_agent.yml",
+      "extra_arguments": [ "--extra-vars", "consul_encryption_key={{user `consul_encryption_key`}}" ]
+    }
+  ],
+
+  "builders": [{
+    "type": "amazon-ebs",
+    "region": "eu-central-1",
+    "source_ami": "ami-1b2bb774",
+    "instance_type": "t2.micro",
+    "ssh_username": "ec2-user",
+    "ami_name": "packer-consul-agent {{timestamp}}"
+  }]
+
+
+}
